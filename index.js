@@ -25,8 +25,8 @@ console.log(`\u001b[32m===${folder} loaded===\u001b[0m`);
 
 // イベントハンドリング
 const eventFiles = fs.readdirSync("./events").filter(file => file.endsWith(".js"));
-for (const file of eventFiles) {
-  const event = require(`./events/${file}`);
+for (const file of eventForders) {
+  const event = require(`./events/${folder}/${file}`);
 if (event.once) {
 try {
   client.once(event.name, (...args) => event.execute(...args, client));
